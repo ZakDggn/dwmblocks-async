@@ -1,0 +1,1 @@
+printf '%s%%' $(pamixer --get-volume)
