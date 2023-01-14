@@ -1,0 +1,1 @@
+printf "BAT: %s" "$(acpi | awk -F', ' '{print $2}')"

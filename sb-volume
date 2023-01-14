@@ -1,1 +1,6 @@
-printf '%s%%' $(pamixer --get-volume)
+muted=$(pamixer --get-mute)
+if [[ $muted == "true" ]]; then
+  printf '  %s%% (muted)' $(pamixer --get-volume)
+else
+  printf '  %s%%' $(pamixer --get-volume)
+fi

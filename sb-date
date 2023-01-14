@@ -1,1 +1,1 @@
-date +"%a %d %b, %H:%M"
+printf " %s" "$(date +"%a %d %b, %H:%M")"
