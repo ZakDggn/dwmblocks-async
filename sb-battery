@@ -1,1 +1,12 @@
-printf "BAT: %s" "$(acpi | awk -F', ' '{print $2}')"
+#!/bin/bash
+
+battery_info=$(acpi)
+if grep -q Charging <<< $battery_info; then
+  icon=󰂄
+else
+  icon=󰁹
+fi
+
+percentage=$(awk -F', ' '{print $2}' <<< $battery_info)
+
+printf "$icon %s" $percentage
