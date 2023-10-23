@@ -3,7 +3,7 @@
 muted=$(pamixer --get-mute)
 volume=$(pamixer --get-volume)
 if [[ $muted == "true" ]]; then
-  printf '   %s%% (muted)' $volume
+  printf '   %s%% (muted)' "$volume"
 else
-  printf '   %s%%' $volume
+  printf '   %s%%' "$volume"
 fi

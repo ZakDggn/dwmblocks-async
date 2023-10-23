@@ -1,12 +1,12 @@
 #!/bin/bash
 
 battery_info=$(acpi)
-if grep -q Charging <<< $battery_info; then
+if grep -q Charging <<< "$battery_info"; then
   icon=󰂄
 else
   icon=󰁹
 fi
 
-percentage=$(awk -F', ' '{print $2}' <<< $battery_info)
+percentage=$(awk -F', ' '{print $2}' <<< "$battery_info")
 
-printf "$icon %s" $percentage
+printf "$icon %s" "$percentage"
