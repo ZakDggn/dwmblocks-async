@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if ! command -v acpi &> /dev/null; then
+  exit
+fi
+
 battery_info=$(acpi)
 if grep -q Charging <<< "$battery_info"; then
   icon=󰂄
